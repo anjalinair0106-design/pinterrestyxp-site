@@ -3,6 +3,7 @@ let chart;
 
 function analyze() {
     const hashtag = document.getElementById("hashtag").value;
+    document.getElementById("score").innerText = "Analyzing...";
 
     fetch("/analyze", {
         method: "POST",
@@ -19,7 +20,7 @@ function analyze() {
         list.innerHTML = "";
         data.related.forEach(tag => {
             const li = document.createElement("li");
-            li.innerText = "#" + tag;
+            li.innerText = tag.startsWith("#") ? tag : "#" + tag;
             list.appendChild(li);
         });
 
@@ -43,3 +44,8 @@ function showChart(trendData) {
         }
     });
 }
+document.getElementById("hashtag").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        analyze();
+    }
+});

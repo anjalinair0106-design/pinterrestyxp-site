@@ -32,6 +32,22 @@ def analyze():
     tag = request.json.get("hashtag")
     result = analyze_hashtag(tag)
     return jsonify(result)
+@app.route("/trending")
+def trending():
+    trending_tags = [
+        "#trending",
+        "#viral",
+        "#explorepage",
+        "#instagood",
+        "#reels",
+        "#photography",
+        "#fashion",
+        "#love",
+        "#motivation",
+        "#tech"
+    ]
+
+    return {"trending": trending_tags}
 
 if __name__ == "__main__":
     app.run(debug=True)

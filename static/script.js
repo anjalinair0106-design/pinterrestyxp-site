@@ -10,6 +10,7 @@ function setLoadingState(isLoading) {
     const button = document.getElementById("analyzeButton");
     button.disabled = isLoading;
     button.textContent = isLoading ? "Analyzing..." : "Analyze";
+    button.setAttribute("aria-busy", String(isLoading));
 }
 
 function updateScore(score, caption) {
@@ -163,12 +164,18 @@ async function loadTrending() {
 
         data.trending.forEach((tag) => {
             const li = document.createElement("li");
-            li.className = "trend-item";
-            li.innerText = tag;
-            li.onclick = () => {
+
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "trend-item";
+            button.innerText = tag;
+            button.setAttribute("aria-label", `Analyze trending hashtag ${tag}`);
+            button.onclick = () => {
                 document.getElementById("hashtag").value = tag;
                 analyze();
             };
+
+            li.appendChild(button);
             list.appendChild(li);
         });
     } catch (error) {
@@ -178,10 +185,9 @@ async function loadTrending() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("hashtag").addEventListener("keypress", (event) => {
-        if (event.key === "Enter") {
-            analyze();
-        }
+    document.querySelector(".search-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        analyze();
     });
 
     showChart([0, 0, 0, 0, 0, 0, 0]);

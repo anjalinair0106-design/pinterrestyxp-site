@@ -24,17 +24,21 @@
                 <div class="panel-header">
                     <div>
                         <p class="section-label">Analyze</p>
-                        <h2>Enter a hashtag</h2>
+                        <h2 id="analyzeHeading">Enter a hashtag</h2>
                     </div>
                     <p class="panel-note">Try tags like <span>#tech</span> or <span>#fashion</span></p>
                 </div>
 
-                <div class="search-row">
-                    <input type="text" id="hashtag" placeholder="#example" autocomplete="off">
-                    <button id="analyzeButton" type="button" onclick="analyze()">Analyze</button>
-                </div>
+                <form class="search-form" aria-labelledby="analyzeHeading">
+                    <label class="input-label" for="hashtag">Hashtag</label>
+                    <div class="search-row">
+                        <input type="text" id="hashtag" name="hashtag" placeholder="#example" autocomplete="off" aria-describedby="hashtagHint">
+                        <button id="analyzeButton" type="submit">Analyze</button>
+                    </div>
+                    <p class="input-hint" id="hashtagHint">Type a hashtag and press Enter or use the Analyze button.</p>
+                </form>
 
-                <div class="score-card">
+                <div class="score-card" aria-live="polite" aria-atomic="true">
                     <p class="section-label">Popularity Score</p>
                     <div class="score-value" id="score">--</div>
                     <p class="score-caption" id="scoreCaption">Run an analysis to see the current popularity estimate.</p>
@@ -42,31 +46,31 @@
 
                 <div class="panel-block">
                     <div class="block-header">
-                        <h3>Related Hashtags</h3>
+                        <h3 id="relatedHeading">Related Hashtags</h3>
                         <p>Copy suggestions with one click.</p>
                     </div>
-                    <ul id="related" class="chip-list empty-state">
+                    <ul id="related" class="chip-list empty-state" aria-labelledby="relatedHeading" aria-live="polite">
                         <li>Suggested hashtags will appear here.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="panel panel-chart">
+            <div class="panel panel-chart" aria-labelledby="trendHeading">
                 <div class="block-header">
-                    <h3>7-Day Trend</h3>
+                    <h3 id="trendHeading">7-Day Trend</h3>
                     <p>Weekly visibility snapshot.</p>
                 </div>
                 <div class="chart-wrap">
-                    <canvas id="trendChart"></canvas>
+                    <canvas id="trendChart" role="img" aria-label="Line chart showing hashtag trend across Monday through Sunday"></canvas>
                 </div>
             </div>
 
-            <div class="panel panel-side">
+            <div class="panel panel-side" aria-labelledby="trendingHeading">
                 <div class="block-header">
-                    <h3>Top Trending Hashtags</h3>
+                    <h3 id="trendingHeading">Top Trending Hashtags</h3>
                     <p>Tap any tag to analyze it instantly.</p>
                 </div>
-                <ul id="trendingList" class="trending-list">
+                <ul id="trendingList" class="trending-list" aria-labelledby="trendingHeading">
                     <li>Loading trending hashtags...</li>
                 </ul>
             </div>

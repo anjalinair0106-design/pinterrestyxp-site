@@ -3,7 +3,8 @@ let chart;
 function normalizeHashtag(tag) {
     const trimmed = tag.trim();
     if (!trimmed) return "";
-    return trimmed.startsWith("#") ? trimmed : `#${trimmed}`;
+    const normalized = trimmed.startsWith("#") ? trimmed : `#${trimmed}`;
+    return normalized.toLowerCase();
 }
 
 function setLoadingState(isLoading) {
@@ -16,6 +17,27 @@ function setLoadingState(isLoading) {
 function updateScore(score, caption) {
     document.getElementById("score").innerText = score;
     document.getElementById("scoreCaption").innerText = caption;
+}
+
+function setFormStatus(message, isError = false) {
+    const status = document.getElementById("formStatus");
+    status.innerText = message;
+    status.classList.toggle("error", isError);
+    status.classList.toggle("success", !isError);
+}
+
+function parseCommaSeparatedTags(value) {
+    return value
+        .split(",")
+        .map((item) => normalizeHashtag(item))
+        .filter(Boolean);
+}
+
+function parseTrendValues(value) {
+    return value
+        .split(",")
+        .map((item) => Number.parseInt(item.trim(), 10))
+        .filter((item) => !Number.isNaN(item));
 }
 
 function renderRelatedTags(tags) {
@@ -144,11 +166,17 @@ async function analyze() {
         });
 
         const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error || "Unable to analyze this hashtag.");
+        }
+
         updateScore(data.popularity, `Performance snapshot for ${hashtag}.`);
         renderRelatedTags(data.related || []);
         showChart(data.trend || []);
     } catch (error) {
-        updateScore("--", "Something went wrong while analyzing this hashtag.");
+        updateScore("--", error.message || "Something went wrong while analyzing this hashtag.");
+        renderRelatedTags([]);
+        showChart([0, 0, 0, 0, 0, 0, 0]);
     } finally {
         setLoadingState(false);
     }
@@ -184,10 +212,75 @@ async function loadTrending() {
     }
 }
 
+async function saveHashtag() {
+    const tag = normalizeHashtag(document.getElementById("newTag").value);
+    const popularityValue = Number.parseInt(document.getElementById("newPopularity").value, 10);
+    const related = parseCommaSeparatedTags(document.getElementById("newRelated").value);
+    const trend = parseTrendValues(document.getElementById("newTrend").value);
+    const isTrending = document.getElementById("newTrending").checked;
+    const saveButton = document.getElementById("saveButton");
+
+    if (!tag) {
+        setFormStatus("Enter a hashtag before saving.", true);
+        return;
+    }
+
+    if (Number.isNaN(popularityValue) || popularityValue < 0 || popularityValue > 100) {
+        setFormStatus("Popularity must be a whole number between 0 and 100.", true);
+        return;
+    }
+
+    if (trend.length !== 7) {
+        setFormStatus("Trend data must include exactly 7 numbers.", true);
+        return;
+    }
+
+    saveButton.disabled = true;
+    saveButton.textContent = "Saving...";
+    setFormStatus("Saving hashtag to the database...");
+
+    try {
+        const response = await fetch("/hashtags", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                tag,
+                popularity: popularityValue,
+                related,
+                trend,
+                isTrending
+            })
+        });
+
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error || "Unable to save this hashtag.");
+        }
+
+        document.querySelector(".add-form").reset();
+        setFormStatus(data.message || `${tag} saved successfully.`);
+        document.getElementById("hashtag").value = data.tag || tag;
+        await loadTrending();
+        await analyze();
+    } catch (error) {
+        setFormStatus(error.message || "Something went wrong while saving this hashtag.", true);
+    } finally {
+        saveButton.disabled = false;
+        saveButton.textContent = "Save Hashtag";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".search-form").addEventListener("submit", (event) => {
         event.preventDefault();
         analyze();
+    });
+
+    document.querySelector(".add-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        saveHashtag();
     });
 
     showChart([0, 0, 0, 0, 0, 0, 0]);

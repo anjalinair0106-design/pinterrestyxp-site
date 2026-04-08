@@ -53,6 +53,34 @@
                         <li>Suggested hashtags will appear here.</li>
                     </ul>
                 </div>
+
+                <div class="panel-block">
+                    <div class="block-header">
+                        <h3 id="addHeading">Add Hashtag</h3>
+                        <p>Save new hashtag records to your local database.</p>
+                    </div>
+                    <form class="add-form" aria-labelledby="addHeading">
+                        <label class="input-label" for="newTag">Hashtag</label>
+                        <input type="text" id="newTag" name="newTag" placeholder="#newtag" autocomplete="off">
+
+                        <label class="input-label" for="newPopularity">Popularity</label>
+                        <input type="number" id="newPopularity" name="newPopularity" min="0" max="100" placeholder="85">
+
+                        <label class="input-label" for="newRelated">Related hashtags</label>
+                        <input type="text" id="newRelated" name="newRelated" placeholder="#growth, #creator, #engagement">
+
+                        <label class="input-label" for="newTrend">7-day trend</label>
+                        <input type="text" id="newTrend" name="newTrend" placeholder="10, 22, 35, 47, 59, 74, 88">
+
+                        <label class="toggle-row" for="newTrending">
+                            <input type="checkbox" id="newTrending" name="newTrending">
+                            <span>Show this hashtag in trending</span>
+                        </label>
+
+                        <button id="saveButton" type="submit">Save Hashtag</button>
+                        <p id="formStatus" class="form-status" aria-live="polite">Add a new record to make the app feel more real.</p>
+                    </form>
+                </div>
             </div>
 
             <div class="panel panel-chart" aria-labelledby="trendHeading">

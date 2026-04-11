@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PinterestyXP | Shoppable Outfit Inspiration</title>
+<meta
+  name="description"
+  content="Discover Pinterest-inspired outfits, bags, and beauty picks. Open each collection on Pinterest and shop tagged products directly from the pins."
+>
+<meta property="og:title" content="PinterestyXP | Shoppable Outfit Inspiration">
+<meta
+  property="og:description"
+  content="Browse curated style boards, open the pins you love, and shop tagged products on Pinterest."
+>
+<meta property="og:type" content="website">
+<meta
+  property="og:image"
+  content="https://i.pinimg.com/736x/31/2a/51/312a51bd7291bc2af0c95de05ea286b4.jpg"
+>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+<style>
+  :root {
+    --bg: #f8f3ec;
+    --surface: #fffdf8;
+    --surface-strong: #fff6ec;
+    --text: #211913;
+    --muted: #6f6259;
+    --line: rgba(33, 25, 19, 0.1);
+    --rose: #b86e63;
+    --rose-deep: #9f5549;
+    --gold: #d7b27d;
+    --forest: #2f4a38;
+    --shadow: 0 20px 45px rgba(33, 25, 19, 0.1);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Manrope", sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(215, 178, 125, 0.18), transparent 28%),
+      linear-gradient(180deg, #fbf7f1 0%, var(--bg) 40%, #f5eee4 100%);
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .wrap {
+    width: min(1160px, calc(100% - 2rem));
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 1.8rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Playfair Display", serif;
+    line-height: 1.1;
+  }
+
+  p {
+    color: var(--muted);
+  }
+
+  section {
+    padding: 5rem 0;
+  }
+
+  .section-head {
+    max-width: 42rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-head h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0.8rem 0 0.9rem;
+  }
+
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(12px);
+    background: rgba(251, 247, 241, 0.86);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .site-nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .brand {
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    text-decoration: none;
+  }
+
+  .brand span {
+    color: var(--rose);
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .btn,
+  button.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.95rem 1.45rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  }
+
+  .btn:hover,
+  button.btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-primary {
+    background: var(--text);
+    color: #fff9f3;
+  }
+
+  .btn-primary:hover {
+    background: var(--rose-deep);
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(33, 25, 19, 0.16);
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--text);
+  }
+
+  .hero {
+    padding: 3.75rem 0 3rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2.2rem;
+    align-items: center;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3rem, 6vw, 5.1rem);
+    margin: 1rem 0 1.2rem;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-copy h1 em {
+    color: var(--rose);
+    font-style: italic;
+  }
+
+  .hero-copy .lead {
+    max-width: 39rem;
+    font-size: 1.05rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
+  }
+
+  .micro-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .micro-proof span {
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(33, 25, 19, 0.08);
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 600;
+  }
+
+  .hero-media {
+    position: relative;
+    min-height: 37rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: #ead5cb;
+  }
+
+  .hero-collage {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.35rem;
+    position: absolute;
+    inset: 0;
+    padding: 0.35rem;
+  }
+
+  .hero-collage img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-collage img:first-child {
+    grid-row: span 2;
+  }
+
+  .hero-note {
+    position: absolute;
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    padding: 1rem 1.1rem;
+    border-radius: 1.2rem;
+    background: rgba(33, 25, 19, 0.82);
+    color: #fff8f0;
+  }
+
+  .hero-note strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-note p {
+    color: rgba(255, 248, 240, 0.82);
+    font-size: 0.88rem;
+  }
+
+  .metrics {
+    padding-top: 1rem;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .metric {
+    padding: 1.25rem;
+    border-radius: 1.4rem;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(33, 25, 19, 0.08);
+  }
+
+  .metric strong {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: var(--rose-deep);
+    margin-bottom: 0.2rem;
+  }
+
+  .metric span {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .how-grid,
+  .reasons-grid,
+  .board-grid,
+  .feature-grid,
+  .faq-grid {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .how-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .how-card,
+  .reason-card,
+  .faq-card {
+    padding: 1.5rem;
+    border-radius: 1.4rem;
+    background: var(--surface);
+    border: 1px solid rgba(33, 25, 19, 0.08);
+    box-shadow: 0 14px 30px rgba(33, 25, 19, 0.05);
+  }
+
+  .step {
+    width: 2.3rem;
+    height: 2.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(184, 110, 99, 0.13);
+    color: var(--rose-deep);
+    font-size: 0.92rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .how-card h3,
+  .reason-card h3,
+  .faq-card h3,
+  .feature-copy h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .reasons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reason-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 246, 236, 0.95));
+  }
+
+  .board-grid {
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  }
+
+  .board-card {
+    border-radius: 1.55rem;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid rgba(33, 25, 19, 0.08);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .board-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px rgba(33, 25, 19, 0.14);
+  }
+
+  .board-image {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+
+  .board-image img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .badge {
+    position: absolute;
+    top: 0.9rem;
+    left: 0.9rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255, 249, 243, 0.92);
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .board-body {
+    padding: 1.2rem 1.2rem 1.35rem;
+  }
+
+  .board-body h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .board-body p {
+    margin-bottom: 1rem;
+  }
+
+  .board-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--rose-deep);
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+
+  .board-note {
+    margin-top: 0.85rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .board-card-static {
+    box-shadow: 0 16px 34px rgba(33, 25, 19, 0.08);
+  }
+
+  .board-card-static:hover {
+    transform: none;
+    box-shadow: 0 16px 34px rgba(33, 25, 19, 0.08);
+  }
+
+  .feature-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: stretch;
+  }
+
+  .feature-visual {
+    position: relative;
+    min-height: 28rem;
+    border-radius: 1.8rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .feature-visual img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .feature-tag {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: rgba(33, 25, 19, 0.84);
+    color: #fff8f0;
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+
+  .feature-copy {
+    padding: 2rem;
+    border-radius: 1.8rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 246, 236, 0.98));
+    border: 1px solid rgba(33, 25, 19, 0.08);
+  }
+
+  .feature-copy ul {
+    list-style: none;
+    margin: 1.4rem 0;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .feature-copy li {
+    padding-left: 1.6rem;
+    position: relative;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .feature-copy li::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--forest);
+    font-weight: 800;
+  }
+
+  .about-panel {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.4rem;
+    border-radius: 1.8rem;
+    background: #211913;
+    color: #fff9f3;
+  }
+
+  .about-image {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    min-height: 22rem;
+  }
+
+  .about-image img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-copy p,
+  .about-copy li {
+    color: rgba(255, 249, 243, 0.8);
+  }
+
+  .about-copy h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0.8rem 0 1rem;
+  }
+
+  .about-list {
+    list-style: none;
+    display: grid;
+    gap: 0.85rem;
+    margin: 1.25rem 0 1.5rem;
+  }
+
+  .about-list li {
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .about-list li::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--gold);
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+  }
+
+  .cta-band {
+    padding: 2rem;
+    border-radius: 1.8rem;
+    background: linear-gradient(135deg, rgba(184, 110, 99, 0.95), rgba(117, 69, 60, 0.95));
+    color: #fffaf5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+  }
+
+  .cta-band p {
+    color: rgba(255, 250, 245, 0.85);
+    max-width: 42rem;
+  }
+
+  .faq-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .disclosure {
+    margin-top: 1rem;
+    padding: 1rem 1.1rem;
+    border-left: 4px solid var(--gold);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  footer {
+    padding: 2rem 0 2.5rem;
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 960px) {
+    .hero-grid,
+    .feature-grid,
+    .about-panel,
+    .faq-grid,
+    .reasons-grid,
+    .how-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-media,
+    .feature-visual {
+      min-height: 24rem;
+    }
+
+    .cta-band,
+    .site-nav .wrap,
+    .footer-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 720px) {
+    section {
+      padding: 4rem 0;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding-top: 2.5rem;
+    }
+
+    .hero-media {
+      min-height: 21rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="wrap">
+      <a class="brand" href="#top">Pinteresty<span>XP</span></a>
+      <ul class="nav-links">
+        <li><a href="#shop">Shop Boards</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li>
+          <a
+            class="btn btn-primary"
+            href="https://in.pinterest.com/pinterestyxp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Open Pinterest</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Pinterest-first style finds</span>
+          <h1>Find the look. Open the pin. <em>Shop the tagged products.</em></h1>
+          <p class="lead">
+            PinterestyXP is a curated outfit inspiration site built for fast decisions.
+            Browse the best boards, open the pin you love, and shop the linked products
+            directly on Pinterest without digging through random search results.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary"
+              href="#shop"
+            >Shop Trending Boards</a>
+            <a
+              class="btn btn-secondary"
+              href="https://in.pinterest.com/pinterestyxp/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Follow on Pinterest</a>
+          </div>
+          <div class="micro-proof">
+            <span>Fashion-focused boards</span>
+            <span>Shoppable Pinterest pins</span>
+            <span>Updated with new saves regularly</span>
+          </div>
+          <div class="disclosure">
+            Affiliate disclosure: some Pinterest pins may include tagged or affiliate products.
+            If you buy through them, I may earn a commission at no extra cost to you.
+          </div>
+        </div>
+
+        <div class="hero-media reveal">
+          <div class="hero-collage">
+            <img src="https://i.pinimg.com/736x/31/2a/51/312a51bd7291bc2af0c95de05ea286b4.jpg" alt="Outfit inspiration">
+            <img src="https://i.pinimg.com/736x/67/9d/5a/679d5ad92efd07820632d302208cf120.jpg" alt="Neutral outfit style">
+            <img src="https://i.pinimg.com/736x/15/d6/cc/15d6ccf51c3f7adb4f929aee567cd80f.jpg" alt="Spring style look">
+            <img src="https://i.pinimg.com/736x/c3/2e/1c/c32e1c0cc117e8ccdb47521d8dc0e2d3.jpg" alt="Trending handbags">
+          </div>
+          <div class="hero-note">
+            <strong>Simple shopping flow</strong>
+            <p>Click a board, open a pin, then tap the product tags on Pinterest.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap metrics">
+        <div class="metrics-grid">
+          <div class="metric reveal">
+            <strong>7+</strong>
+            <span>Active style boards</span>
+          </div>
+          <div class="metric reveal">
+            <strong>50+</strong>
+            <span>Saved looks and picks</span>
+          </div>
+          <div class="metric reveal">
+            <strong>3 steps</strong>
+            <span>From homepage to product tags</span>
+          </div>
+          <div class="metric reveal">
+            <strong>0 clutter</strong>
+            <span>No messy product walls here</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>This site sends high-intent visitors straight to your shoppable Pinterest pins.</h2>
+          <p>
+            Since your products are tagged on Pinterest already, the homepage should not try
+            to do too much. Its job is to warm people up, organize your best categories, and
+            push them toward the boards most likely to convert.
+          </p>
+        </div>
+        <div class="how-grid">
+          <article class="how-card reveal">
+            <div class="step">1</div>
+            <h3>Choose a style category</h3>
+            <p>Visitors land here, understand what you share, and pick the board that matches their mood.</p>
+          </article>
+          <article class="how-card reveal">
+            <div class="step">2</div>
+            <h3>Open the most relevant pin</h3>
+            <p>Your Pinterest board does the heavy lifting by showing the look in context and building shopping intent.</p>
+          </article>
+          <article class="how-card reveal">
+            <div class="step">3</div>
+            <h3>Buy from tagged products</h3>
+            <p>Product tags on Pinterest become the checkout path, so you do not need to build every look manually on this site.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="reason-card reveal">
+          <h3>Only selected boards are shoppable</h3>
+          <p>
+            Some boards are here for style inspiration only. Use the shoppable section below when you want
+            Pinterest pins with tagged products.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Shop boards</span>
+          <h2>These are the boards where visitors can expect tagged products.</h2>
+          <p>
+            Only the boards below should carry shopping-focused language. That keeps the site honest
+            and sends buyers to the parts of your Pinterest profile that can actually earn.
+          </p>
+        </div>
+
+        <div class="board-grid">
+          <a
+            class="board-card reveal"
+            href="https://in.pinterest.com/pinterestyxp/outfitinspo/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="board-image">
+              <img src="https://i.pinimg.com/736x/67/9d/5a/679d5ad92efd07820632d302208cf120.jpg" alt="Outfit inspo board">
+              <span class="badge">Most versatile</span>
+            </div>
+            <div class="board-body">
+              <h3>Outfit Inspo</h3>
+              <p>Everyday looks, elevated basics, and the easiest board for visitors to start shopping from.</p>
+              <div class="board-foot">
+                <span>Open board</span>
+                <span>Tagged looks on Pinterest</span>
+              </div>
+              <p class="board-note">Note: the "Outfit Inspo - Models" section is inspiration only, not shoppable.</p>
+            </div>
+          </a>
+
+          <a
+            class="board-card reveal"
+            href="https://in.pinterest.com/pinterestyxp/spring-fits/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="board-image">
+              <img src="https://i.pinimg.com/736x/56/1e/52/561e52bb0e6b9a918ab2c8c98cd33c15.jpg" alt="Spring fits board">
+              <span class="badge">Seasonal clicks</span>
+            </div>
+            <div class="board-body">
+              <h3>Spring Fits</h3>
+              <p>Fresh seasonal looks for users already searching with buying intent around current trends.</p>
+              <div class="board-foot">
+                <span>See spring picks</span>
+                <span>Pin to product flow</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="board-card reveal"
+            href="https://in.pinterest.com/pinterestyxp/handbags/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="board-image">
+              <img src="https://i.pinimg.com/736x/15/d6/cc/15d6ccf51c3f7adb4f929aee567cd80f.jpg" alt="Handbags board">
+              <span class="badge">High intent</span>
+            </div>
+            <div class="board-body">
+              <h3>Handbags</h3>
+              <p>Accessories often convert faster because shoppers can buy a single item without committing to a full look.</p>
+              <div class="board-foot">
+                <span>Browse bags</span>
+                <span>Open tagged pins</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="board-card reveal"
+            href="https://in.pinterest.com/pinterestyxp/nails/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="board-image">
+              <img src="https://i.pinimg.com/736x/76/49/99/76499955632da0dce2d5674b269fdfdf.jpg" alt="Nails board">
+              <span class="badge">Beauty traffic</span>
+            </div>
+            <div class="board-body">
+              <h3>Nails</h3>
+              <p>Beauty is a strong add-on category that can bring repeat visitors back between fashion purchases.</p>
+              <div class="board-foot">
+                <span>Shop beauty inspo</span>
+                <span>Direct to Pinterest</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="board-card reveal"
+            href="https://in.pinterest.com/pinterestyxp/baseballfit/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="board-image">
+              <img src="https://i.pinimg.com/736x/f3/dc/70/f3dc7002e33a29440d0a79bd2f2d203e.jpg" alt="Baseball fit board">
+              <span class="badge">Niche shoppable</span>
+            </div>
+            <div class="board-body">
+              <h3>Baseball Fit</h3>
+              <p>Sporty outfit inspiration for visitors who want a more casual, trend-led shopping angle.</p>
+              <div class="board-foot">
+                <span>Open sporty looks</span>
+                <span>Tagged products where available</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inspiration only</span>
+          <h2>These boards build taste and engagement, not direct shopping intent.</h2>
+          <p>
+            Keeping them visible is still useful for branding, but they should not use "shop"
+            language on the homepage because visitors will expect tagged products there.
+          </p>
+        </div>
+
+        <div class="board-grid">
+          <div class="board-card board-card-static reveal">
+            <div class="board-image">
+              <img src="https://i.pinimg.com/736x/67/9d/5a/679d5ad92efd07820632d302208cf120.jpg" alt="Outfit inspo models board">
+              <span class="badge">Inspiration only</span>
+            </div>
+            <div class="board-body">
+              <h3>Outfit Inspo - Models</h3>
+              <p>This section supports your aesthetic and visual identity, but it should not be positioned as a shoppable board.</p>
+              <div class="board-foot">
+                <span>Style moodboard</span>
+                <span>No tagged products promised</span>
+              </div>
+            </div>
+          </div>
+
+          <a
+            class="board-card reveal"
+            href="https://in.pinterest.com/pinterestyxp/qoutes/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="board-image">
+              <img src="https://i.pinimg.com/736x/01/9d/8c/019d8c05aada5ba2950a58f94389243c.jpg" alt="Quotes board">
+              <span class="badge">Inspiration only</span>
+            </div>
+            <div class="board-body">
+              <h3>Quotes</h3>
+              <p>Good for personality and saves, but not a buying board. Keep it clearly separate from shopping traffic.</p>
+              <div class="board-foot">
+                <span>Open quotes board</span>
+                <span>No shopping CTA</span>
+              </div>
+            </div>
+          </a>
+
+          <div class="board-card board-card-static reveal">
+            <div class="board-image">
+              <img src="https://i.pinimg.com/736x/46/2f/53/462f535f7a9095fe1cda4d5cdd169f75.jpg" alt="Cars board">
+              <span class="badge">Inspiration only</span>
+            </div>
+            <div class="board-body">
+              <h3>Cars</h3>
+              <p>This can stay on-brand as a visual interest board, but it should sit away from the shoppable funnel.</p>
+              <div class="board-foot">
+                <span>Visual lifestyle content</span>
+                <span>Not positioned for sales</span>
+              </div>
+            </div>
+          </div>
+
+          <a
+            class="board-card reveal"
+            href="https://in.pinterest.com/pinterestyxp/painting/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="board-image">
+              <img src="https://i.pinimg.com/736x/76/49/99/76499955632da0dce2d5674b269fdfdf.jpg" alt="Painting board">
+              <span class="badge">Inspiration only</span>
+            </div>
+            <div class="board-body">
+              <h3>Paintings</h3>
+              <p>Useful for aesthetic depth and saves, but better treated as a mood board than a monetization path.</p>
+              <div class="board-foot">
+                <span>Open art board</span>
+                <span>Inspiration only</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap feature-grid">
+        <div class="feature-visual reveal">
+          <img src="https://i.pinimg.com/736x/67/9d/5a/679d5ad92efd07820632d302208cf120.jpg" alt="Featured neutral outfit">
+          <div class="feature-tag">Warm traffic before the Pinterest click</div>
+        </div>
+
+        <div class="feature-copy reveal">
+          <span class="eyebrow">What to keep doing</span>
+          <h3>Use the site as a filter, not the full store.</h3>
+          <p>
+            Since you do not have time to build "shop this look" pages for every outfit, the best move
+            is to let Pinterest stay your shopping engine and let the website act as a polished doorway.
+          </p>
+          <ul>
+            <li>Feature only your actual shoppable boards in the selling section.</li>
+            <li>Keep inspiration-only boards visually separate from buying boards.</li>
+            <li>Use seasonal language because it creates urgency.</li>
+            <li>Send people to Pinterest with obvious calls to action.</li>
+            <li>Show your disclosure clearly so visitors trust the site.</li>
+          </ul>
+          <a
+            class="btn btn-primary"
+            href="https://in.pinterest.com/pinterestyxp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Go to Pinterest and shop</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="about-panel reveal">
+          <div class="about-image">
+            <img src="https://i.pinimg.com/736x/48/c2/03/48c2032d8f406878c4435d487938167b.jpg" alt="PinterestyXP style mood">
+          </div>
+          <div class="about-copy">
+            <span class="eyebrow">About PinterestyXP</span>
+            <h2>PinterestyXP is your place for outfit inspiration, trend-forward finds, and curated boards worth saving.</h2>
+            <p>
+              From everyday outfit ideas to seasonal style picks, PinterestyXP is built for people
+              who love discovering looks that feel current, wearable, and easy to explore. Some
+              boards are shoppable through tagged Pinterest products, while others are here purely
+              for inspiration.
+            </p>
+            <a
+              class="btn btn-secondary"
+              href="https://in.pinterest.com/pinterestyxp/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Explore on Pinterest</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Ready to turn visitors into Pinterest shoppers?</h2>
+            <p>
+              Send them to your best-performing boards first, not every board you own.
+              More focus usually means more clicks and better affiliate intent.
+            </p>
+          </div>
+          <a
+            class="btn btn-secondary"
+            href="https://in.pinterest.com/pinterestyxp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Open the Pinterest profile</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Quick answers</span>
+          <h2>What visitors may wonder before they click.</h2>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-card reveal">
+            <h3>Can I shop directly on this site?</h3>
+            <p>No. This homepage is designed to guide you to the Pinterest pins where products are tagged and ready to explore.</p>
+          </article>
+          <article class="faq-card reveal">
+            <h3>Are all boards shoppable?</h3>
+            <p>No. Only selected boards have shopping intent. The inspiration-only boards are there for style ideas, not tagged products.</p>
+          </article>
+          <article class="faq-card reveal">
+            <h3>How does PinterestyXP earn?</h3>
+            <p>Some linked or tagged products may earn affiliate commissions, at no additional cost to the shopper.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>
+        <strong class="brand">Pinteresty<span>XP</span></strong>
+      </div>
+      <div class="footer-links">
+        <a href="#shop">Shop Boards</a>
+        <a href="#how">How It Works</a>
+        <a href="#about">About</a>
+        <a href="https://in.pinterest.com/pinterestyxp/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      </div>
+      <div>Copyright 2026 PinterestyXP</div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((item) => {
+      observer.observe(item);
+    });
+  </script>
+</body>
+</html>

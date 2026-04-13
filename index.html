@@ -450,6 +450,55 @@
     font-weight: 600;
   }
 
+  .top-viewed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .top-viewed-card {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 246, 236, 0.96));
+    border: 1px solid rgba(33, 25, 19, 0.08);
+    box-shadow: 0 16px 34px rgba(33, 25, 19, 0.08);
+  }
+
+  .top-viewed-rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.3rem;
+    height: 2.3rem;
+    padding: 0 0.75rem;
+    border-radius: 999px;
+    background: rgba(184, 110, 99, 0.12);
+    color: var(--rose-deep);
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .top-viewed-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .top-viewed-stat {
+    display: block;
+    color: var(--forest);
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0.8rem 0 0.35rem;
+  }
+
+  .top-viewed-meta {
+    color: var(--muted);
+    font-size: 0.84rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
   .board-card-static {
     box-shadow: 0 16px 34px rgba(33, 25, 19, 0.08);
   }
@@ -648,6 +697,10 @@
 
     .metrics-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .top-viewed-grid {
+      grid-template-columns: 1fr;
     }
 
     .hero-media,
@@ -931,6 +984,63 @@
               </div>
             </div>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Most viewed right now</span>
+          <h2>These are your top 3 shoppable boards based on recent Pinterest impressions.</h2>
+          <p>
+            Based on Pinterest Analytics from March 14, 2026 to April 13, 2026, these boards are
+            getting the most visibility from your shoppable list.
+          </p>
+        </div>
+
+        <div class="top-viewed-grid">
+          <article class="top-viewed-card reveal">
+            <span class="top-viewed-rank">#1</span>
+            <h3>Nails</h3>
+            <p>Your strongest board for reach right now, making it a smart first click for visitors.</p>
+            <span class="top-viewed-stat">6,721 impressions</span>
+            <div class="top-viewed-meta">235 engagements • 206 pin clicks</div>
+            <a
+              class="btn btn-secondary"
+              href="https://www.pinterest.com/pinterestyxp/nails/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View nails board</a>
+          </article>
+
+          <article class="top-viewed-card reveal">
+            <span class="top-viewed-rank">#2</span>
+            <h3>Outfit Inspo</h3>
+            <p>A high-performing core board that is already attracting strong interest and repeat browsing.</p>
+            <span class="top-viewed-stat">5,477 impressions</span>
+            <div class="top-viewed-meta">134 engagements • 105 pin clicks</div>
+            <a
+              class="btn btn-secondary"
+              href="https://www.pinterest.com/pinterestyxp/outfitinspo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View outfit inspo</a>
+          </article>
+
+          <article class="top-viewed-card reveal">
+            <span class="top-viewed-rank">#3</span>
+            <h3>Baseball Fit</h3>
+            <p>This niche board is performing better than Spring Fits and Handbags, so it deserves more homepage attention.</p>
+            <span class="top-viewed-stat">3,706 impressions</span>
+            <div class="top-viewed-meta">109 engagements • 102 pin clicks</div>
+            <a
+              class="btn btn-secondary"
+              href="https://www.pinterest.com/pinterestyxp/baseballfit/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View baseball fit</a>
+          </article>
         </div>
       </div>
     </section>

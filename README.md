@@ -43,11 +43,50 @@
 hashtag-analyzer/
 │
 ├── app.py                  # Flask backend & API routes
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
 ├── templates/
 │   └── index.html          # Main HTML template
 ├── static/
 │   ├── style.css           # Styling & layout
 │   └── script.js           # Frontend logic & Chart.js integration
+└── tests/                  # Test suite
+    ├── __init__.py
+    ├── conftest.py         # Pytest fixtures
+    ├── test_api.py         # Unit tests for API endpoints
+    └── test_integration.py # Integration tests
+```
+
+## 🧪 Testing
+
+This project includes comprehensive unit and integration tests using pytest.
+
+### Running Tests
+
+```bash
+# Install test dependencies
+pip install -r requirements.txt
+
+# Run all tests
+pytest tests/
+
+# Run with verbose output
+pytest tests/ -v
+
+# Run specific test file
+pytest tests/test_api.py
+
+# Run specific test
+pytest tests/test_api.py::TestAnalyzeRoute::test_analyze_existing_hashtag
+```
+
+### Test Structure
+
+- `tests/conftest.py`: Pytest fixtures for test app and database setup
+- `tests/test_api.py`: Unit tests for API endpoints
+- `tests/test_integration.py`: Integration tests for full application workflows
+
+Tests use an in-memory SQLite database for isolation and speed.
 └── README.md
 ```
 

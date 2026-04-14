@@ -88,10 +88,6 @@ def normalize_hashtag(tag):
     return cleaned if cleaned.startswith("#") else f"#{cleaned}"
 
 
-with app.app_context():
-    db.create_all()
-    seed_database()
-
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -166,5 +162,9 @@ def trending():
 
     return {"trending": [tag.tag for tag in trending_tags]}
 
+
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
+        seed_database()
     app.run(debug=True)
